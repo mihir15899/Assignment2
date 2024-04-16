@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Confirm Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Confirm Booking</h1>
+
+@if (ViewData.ContainsKey("BookingId") && ViewData["Car"] != null)
+{
+    var car = ViewData["Car"] as GBCTravel.Models.Car;
+    <div>
+        <p>Your booking with ID: <strong>@ViewData["BookingId"]</strong> has been confirmed.</p>
+        <h3>Car Rental Details:</h3>
+        <dl class="row">
+            <dt class="col-sm-4">Brand</dt>
+            <dd class="col-sm-8">@car.Brand</dd>
+
+            <dt class="col-sm-4">Model</dt>
+            <dd class="col-sm-8">@car.Model</dd>
+
+            <dt class="col-sm-4">Color</dt>
+            <dd class="col-sm-8">@car.Color</dd>
+
+            <dt class="col-sm-4">Daily Rate</dt>
+            <dd class="col-sm-8">$@car.DailyRate</dd>
+
+            <dt class="col-sm-4">Availability</dt>
+            <dd class="col-sm-8">
+                @if (car.IsAvailable)
+                {
+                    <span class="text-success">Available</span>
+                }
+                else
+                {
+                    <span class="text-danger">Not Available</span>
+                }
+            </dd>
+
+        </dl>
+    </div>
+}
+else
+{
+    <div>
+        <p>Sorry, booking confirmation details not found.</p>
+    </div>
+}
+
+<div>
+    <a class="btn btn-primary" asp-controller="userView" asp-action="viewCars">Back to Car Rentals</a>
+        <a class="btn btn-primary" asp-controller="Bookings" asp-action="Index">View your Bookings</a>
+</div>

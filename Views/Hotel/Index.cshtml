@@ -1,0 +1,52 @@
+﻿@model IEnumerable<GBCTravel.Models.Hotel>
+
+@{
+    ViewData["Title"] = "Hotel Index";
+}
+
+<div class="container">
+    <h1>Explore Our Hotels</h1>
+
+    <p>
+        <a class="btn btn-primary" asp-action="Create">Create New Hotel</a>
+    </p>
+
+    @if (Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Room Number</th>
+                        <th>Name</th>
+                        <th>Location</th>
+                        <th>Price Per Night</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hotel in Model)
+                    {
+                        <tr>
+                            <td>@hotel.RoomNumber</td>
+                            <td>@hotel.Name</td>
+                            <td>@hotel.Location</td>
+                            <td>$@hotel.PricePerNight</td>
+                            
+                            <td>
+                                <a class="btn btn-info" asp-action="Details" asp-route-id="@hotel.Id">Details</a>
+                                <a class="btn btn-primary" asp-action="Edit" asp-route-id="@hotel.Id">Edit</a>
+                                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@hotel.Id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <p>Sorry, no hotels found. Try again.</p>
+    }
+</div>

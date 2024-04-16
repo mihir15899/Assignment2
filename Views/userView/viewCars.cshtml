@@ -1,0 +1,31 @@
+﻿@model IEnumerable<GBCTravel.Models.Car>
+
+@{
+    ViewData["Title"] = "Car Index";
+}
+
+<div class="container">
+    <h1>Explore Our Cars</h1>
+
+    <div class="row">
+        @foreach (var car in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">@car.Brand - @car.Model</h5>
+                        <p class="card-text">Color: @car.Color</p>
+                        <p class="card-text">Daily Rate: $@car.DailyRate</p>
+                        <p class="card-text">Availability: @(car.IsAvailable ? "Available" : "Not Available")</p>
+                        <a href="@Url.Action("carDetails", new { id = car.Id })" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    @if (!Model.Any())
+    {
+        <p>No cars found.</p>
+    }
+</div>

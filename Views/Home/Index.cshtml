@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManage
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if (User.IsInRole("Admin"))
+{
+    <h1>Hello Admin!</h1>
+}
+else
+{
+    <h1>Welcome User!</h1>
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Greetings from Our Travel Application Platform!</h1>
+        <p class="lead">Embark on your next travel adventure and make reservations effortlessly!</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Hotels</h5>
+                    <p class="card-text">Find the perfect accommodation for your journey.</p>
+                    <a href="@Url.Action("viewHotels", "userView")" class="btn btn-primary">View Hotels</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Flights</h5>
+                    <p class="card-text">Discover flights for your destination.</p>
+                    <a href="@Url.Action("viewFlights", "userView")" class="btn btn-primary">View Flights</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Rental Cars</h5>
+                    <p class="card-text">Manage your bookings in more easy way.</p>
+                    <a href="@Url.Action("viewCars", "userView")" class="btn btn-primary">View Cars</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

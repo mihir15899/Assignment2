@@ -1,0 +1,84 @@
+﻿@{
+    string groupName = "Group 1";
+    string[] studentNames = { "Mihir Chavan ", "Tushar Tyagi" };
+    string[] studentIds = { "101417653", "101423776" };
+    ViewData["Title"] = "Group Info ";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .container {
+            margin-top: 50px;
+            background-color: slategrey
+        }
+
+        .card {
+            margin-bottom: 20px;
+            background-color: lightpink
+        }
+    </style>
+</head>
+<body>
+
+    @* <div class="container">
+    <h1 class="text-center">@groupName</h1>
+    <hr>
+    <h2 class="text-center">Student Information</h2>
+    <div class="row">
+    @foreach (var i in Enumerable.Range(0, studentNames.Length))
+    {
+    <div class="col-md-6">
+    <img src=@imageUrls  class="img-fluid mb-4" alt="@studentNames Image">
+    </div>
+    <div class="col-md-4">
+    <div class="card">
+    <div class="card-body">
+    <h5 class="card-title">@studentNames[i]</h5>
+    <p class="card-text">Student ID: @studentIds[i]</p>
+    </div>
+    </div>
+    </div>
+    }
+    </div>
+    </div>
+    *@
+    <div class="container">
+        <h1 class="text-center">@groupName</h1>
+        <hr>
+        <h2 class="text-center">Group Information:=</h2>
+        <div class="row">
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Mihir Chavan</h5>
+                        <p class="card-text">Student ID: 101417653<p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tushar Tyagi</h5>
+                        <p class="card-text">Student ID: 101423776</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

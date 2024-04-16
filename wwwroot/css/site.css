@@ -1,0 +1,74 @@
+// Global styles
+$body-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$body-line-height: 1.6;
+$body-background-color: #f8f9fa;
+$body-color: #333;
+$body-scroll-behavior: smooth;
+
+body {
+    font-family: $body-font-family;
+    line-height: $body-line-height;
+    background-color: $body-background-color;
+    color: $body-color;
+    scroll-behavior: $body-scroll-behavior;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+// Navbar styles
+$navbar-background-color: #343a40;
+$navbar-border-color: #222;
+$navbar-brand-color: #fff;
+$navbar-link-color: #fff;
+$navbar-link-hover-color: #fff;
+$navbar-link-hover-background-color: #495057;
+
+.navbar {
+    background-color: $navbar-background-color;
+    border-bottom: 1px solid $navbar-border-color;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: $navbar-brand-color;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+}
+
+.navbar-nav .nav-link {
+    color: $navbar-link-color;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-item:hover {
+    background-color: $navbar-link-hover-background-color;
+}
+
+    .navbar-nav .nav-item:hover .nav-link {
+        color: $navbar-link-hover-color;
+    }
+
+// Main content styles
+.main-content {
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+// Hover styles for headings
+h1, h2, h3, h4, h5 {
+    transition: color 0.3s ease;
+    &:hover
+
+{
+    color: #f00;
+    // Add your hover styles for headings here
+}
+}

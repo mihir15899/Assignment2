@@ -1,0 +1,65 @@
+﻿@model GBCTravel.Models.Flight
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Confirm Booking</h1>
+
+@if (ViewData.ContainsKey("BookingId") && ViewData["Flight"] != null)
+{
+    var car = ViewData["Flight"] as GBCTravel.Models.Flight;
+    <div>
+        <p>Your booking with ID: <strong>@ViewData["BookingId"]</strong> has been confirmed.</p>
+        <h3>Booking Details for flights:</h3>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Airline
+            </dt>
+            <dd class="col-sm-10">
+                @car.Airline
+            </dd>
+            <dt class="col-sm-2">
+                Origin
+            </dt>
+            <dd class="col-sm-10">
+                @car.Origin
+            </dd>
+            <dt class="col-sm-2">
+                Destination
+            </dt>
+            <dd class="col-sm-10">
+                @car.Destination
+            </dd>
+            <dt class="col-sm-2">
+                DepartureTime
+            </dt>
+            <dd class="col-sm-10">
+                @car.DepartureTime
+            </dd>
+            <dt class="col-sm-2">
+                ArrivalTime
+            </dt>
+            <dd class="col-sm-10">
+                @car.ArrivalTime
+            </dd>
+            <dt class="col-sm-2">
+                Price
+            </dt>
+            <dd class="col-sm-10">
+                @car.Price
+            </dd>
+        </dl>
+    </div>
+}
+else
+{
+    <div>
+        <p>Sorry, Booking details not found.Try again.</p>
+    </div>
+}
+
+<div>
+    <a class="btn btn-primary" asp-controller="userView" asp-action="viewFlights">Back to Flights menu</a>
+    <a class="btn btn-primary" asp-controller="Bookings" asp-action="Index">View the Bookings</a>
+</div>

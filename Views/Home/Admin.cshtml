@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 class="display-4">Hello Admin!</h1>
+        <p class="lead">
+            Manage your travel bookings with ease.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="hotel-image.jpg" class="card-img-top" alt="Hotels">
+                <div class="card-body">
+                    <h5 class="card-title">Hotels</h5>
+                    <p class="card-text">
+                        Explore the perfect accommodation for your trip.
+                    <a href="@Url.Action("Index", "Hotel")" class="btn btn-primary">View Hotels</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="flight-image.jpg" class="card-img-top" alt="Flights">
+                <div class="card-body">
+                    <h5 class="card-title">Flights</h5>
+                    <p class="card-text">
+                        Find amazing offers on airfare to the destinations you've been dreaming of visiting.
+                    </p>
+                    <a href="@Url.Action("Index", "Flights")" class="btn btn-primary">View Flights</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="car-image.jpg" class="card-img-top" alt="Car Rental">
+                <div class="card-body">
+                    <h5 class="card-title">Rental Cars</h5>
+                    <p class="card-text">
+                        Handle your reservations and travel schedule.
+                    </p>
+                    <a href="@Url.Action("Index", "Cars")" class="btn btn-primary">View Cars</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
